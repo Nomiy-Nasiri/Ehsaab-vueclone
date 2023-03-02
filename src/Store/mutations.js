@@ -37,3 +37,8 @@ export const  REDUCE_PRODUCT = (state ,payload) => {
     state.cart[index].quantity * state.cart[index].price;
   }
 }
+export const DELETE_PRODUCT = (state, product) => {
+ state.cart = state.cart.filter(el =>{
+  return el.id !== product.id
+ })
+}

@@ -4,6 +4,6 @@ export default {
     product:{},
     popupShow:false,
     cart:[],
-    quantity:1
+   
    
 }

@@ -1,16 +1,10 @@
 <template>
     <div class="form-cart">
         <div class="cart">
-
             <h2>packege 1</h2>
             <p>Store Name</p>
-
-
-
             <div class="cartitems">
                 <div class="cartitem" v-for="(product, index) in $store.state.cart" :key="index">
-
-
                     <div class="imge-side">
                         <div class="imgqunt">
                             <img :src="product.thumbnail" alt="#">
@@ -19,24 +13,22 @@
                                     <p>{{ product.title }}</p>
                                 </span>
                                 <span>
-                                    <p class="pricing">{{ product.price }} Rs {{ product.quantity }} = {{ product.totalprice }}</p>
+                                    <p class="pricing">{{ product.price }} Rs {{ product.quantity }} = {{ product.totalprice
+                                    }}</p>
                                 </span>
                             </h3>
                         </div>
                     </div>
                     <div class="edit-side">
                         <cartButton :product="product" />
-
-                        <img src="../assets/icons/delete 24px.svg" alt="#">
+                        <img v-on:click="removeProduct(product)" src="../assets/icons/delete 24px.svg" alt="#">
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="crtfrm">
             <cartForm />
         </div>
-
     </div>
 </template>
 <script >
@@ -47,7 +39,14 @@ export default {
         cartForm,
         cartButton,
     },
+    methods:{
 
+        removeProduct: function (product) {
+            this.$store.dispatch("deleteProduct",product )
+   
+
+        }
+    }
 }
 </script>
 <style scoped>
@@ -83,10 +82,11 @@ export default {
 
 .imge-side {
     width: 500px;
- 
-    height:fit-content;
+
+    height: fit-content;
 }
-.imge-side img{
+
+.imge-side img {
     margin-right: 15px;
 }
 
@@ -97,7 +97,8 @@ export default {
     line-height: 23px;
     color: #000000;
 }
-.pricing{
+
+.pricing {
     padding: 5px 0px;
 }
 
@@ -107,8 +108,6 @@ export default {
     font-size: 18px;
     line-height: 21px;
     /* identical to box height */
-
-
     color: #000000;
 }
 
@@ -128,5 +127,8 @@ export default {
     justify-content: space-evenly;
     width: 70px;
     margin-top: 10px;
+}
+.edit-side img{
+ cursor: pointer;
 }
 </style>

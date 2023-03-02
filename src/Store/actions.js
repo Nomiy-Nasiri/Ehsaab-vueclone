@@ -34,6 +34,9 @@ export const updatePrice = ({ commit }, payload) => {
 export const ReducePrice = ({commit},payload) => {
   commit("REDUCE_PRODUCT", payload);
 }
+export const deleteProduct = ({commit},product)=>{
+  commit("DELETE_PRODUCT",product)
+}
 
 // export const getProduct = ({commit},productId) =>{
 //     axios.get(`https://dummyjson.com/products/${productId}`)
