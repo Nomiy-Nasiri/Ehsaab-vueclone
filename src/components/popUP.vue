@@ -7,14 +7,15 @@
                 <img :src="product.thumbnail" alt="#">
             </div>
             <div class="text-area">
+                <img src="../assets/images/Bussiness logo.png"/>
                 <h1>store name</h1>
                 <br />
-                <p>shopnumber</p>
+                <p>naveed shahed road jutail Gilgit</p>
                 <hr />
                 <h2>{{product.title}}</h2>
                 <br />
                 
-                <P>{{ product.price }} Rs<span><button>ADD TO CART</button></span></P>
+                <P>Rs : {{ product.price }} </P>
                 <br />
                 <p>{{product.description}}</p>
                 <br />
